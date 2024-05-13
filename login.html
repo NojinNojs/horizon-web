@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Login - Horizon</title>
+    <link rel="stylesheet" href="/assets/css/login.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-container active">
+        <div class="navbar-list">
+          <a href="login.html">Login</a>
+        </div>
+        <div class="navbar-list">
+          <a href="register.html">Register</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="title">Horizon Login</div>
+      <div class="content">
+        <form action="homepage.html" onsubmit="return validateForm()">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Username/Email</span>
+              <input
+                type="text"
+                placeholder="Enter your username or email"
+                required
+                name="username"
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                required
+                name="password"
+              />
+            </div>
+          </div>
+          <p class="smalltext-register-login">
+            Don't have an account? <a href="register.html">Register here</a>
+          </p>
+          <div class="button">
+            <input type="submit" value="Login" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function validateForm() {
+        var x = document.forms["form"]["username"].value;
+        var y = document.forms["form"]["password"].value;
+        if (x == "" || y == "") {
+          alert("Please fill out all fields");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
