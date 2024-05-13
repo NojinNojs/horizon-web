@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <title>Register - Horizon</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
     <link rel="stylesheet" href="/assets/css/register.css" />
   </head>
   <body>
@@ -20,12 +24,7 @@
     <div class="container">
       <div class="title">Horizon Register</div>
       <div class="content">
-        <form
-          name="form"
-          action="index.html"
-          
-          onsubmit="return validateForm()"
-        >
+        <form name="form" action="index.html" onsubmit="return validateForm()">
           <div class="user-details">
             <div class="input-box">
               <span class="details">Full Name</span>
@@ -180,7 +179,9 @@
         var today = new Date();
         var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
         if (age < 13) {
-          var confirmUnderage = confirm("You must be at least 13 years old to register.");
+          var confirmUnderage = confirm(
+            "You must be at least 13 years old to register."
+          );
           if (confirmUnderage) {
             window.location.href = "https://www.google.com";
           } else {
