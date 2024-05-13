@@ -20,39 +20,90 @@
     <div class="container">
       <div class="title">Horizon Register</div>
       <div class="content">
-        <form action="index.html" method="post" onsubmit="return validateForm()">
+        <form
+          name="form"
+          action="index.html"
+          method="post"
+          onsubmit="return validateForm()"
+        >
           <div class="user-details">
             <div class="input-box">
               <span class="details">Full Name</span>
-              <input type="text" name="fullname" placeholder="Enter your name" required />
+              <input
+                type="text"
+                name="fullname"
+                placeholder="Enter your name"
+                required
+              />
             </div>
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" name="username" placeholder="Enter your username" pattern="[a-z.]{4,12}" title="Minimum 4 characters, only lowercase and dot, maximum 12 characters" required />
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter your username"
+                pattern="[a-z.]{4,12}"
+                title="Minimum 4 characters, only lowercase and dot, maximum 12 characters"
+                required
+              />
             </div>
             <div class="input-box">
               <span class="details">Birth Date</span>
-              <input type="date" name="birthdate" placeholder="Enter your Birth Date" required />
+              <input
+                type="date"
+                name="birthdate"
+                placeholder="Enter your Birth Date"
+                required
+              />
             </div>
             <div class="input-box">
               <span class="details">Address</span>
-              <input type="text" name="address" placeholder="Enter your Address" required />
+              <input
+                type="text"
+                name="address"
+                placeholder="Enter your Address"
+                required
+              />
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="email" name="email" placeholder="Enter your email" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
             </div>
             <div class="input-box">
               <span class="details">Phone Number</span>
-              <input type="number" name="phone" placeholder="Enter your number" required />
+              <input
+                type="number"
+                name="phone"
+                placeholder="Enter your number"
+                required
+              />
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="password" name="password" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6-16 characters" required />
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 6-16 characters"
+                required
+              />
             </div>
             <div class="input-box">
               <span class="details">Confirm Password</span>
-              <input type="password" name="confirmPassword" placeholder="Confirm your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6-16 characters" required />
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 6-16 characters"
+                required
+              />
             </div>
           </div>
           <div class="gender-details">
@@ -75,7 +126,9 @@
               </label>
             </div>
           </div>
-          <p class="smalltext-register-login">Have an account? <a href="index.html">Login here</a></p>
+          <p class="smalltext-register-login">
+            Have an account? <a href="index.html">Login here</a>
+          </p>
           <div class="button">
             <input type="submit" value="Register" />
           </div>
@@ -84,35 +137,58 @@
     </div>
     <script>
       function validateForm() {
-        var x = document.forms["form"]["fullname"].value;
-        var y = document.forms["form"]["username"].value;
-        var z = document.forms["form"]["birthdate"].value;
-        var a = document.forms["form"]["address"].value;
-        var b = document.forms["form"]["email"].value;
-        var c = document.forms["form"]["phone"].value;
-        var d = document.forms["form"]["password"].value;
-        var e = document.forms["form"]["confirmPassword"].value;
-        var f = document.forms["form"]["gender"].value;
-        if (x == "" || y == "" || z == "" || a == "" || b == "" || c == "" || d == "" || e == "" || f == "") {
+        var form = document.forms["form"];
+        var fullname = form["fullname"].value;
+        var username = form["username"].value;
+        var birthdate = form["birthdate"].value;
+        var address = form["address"].value;
+        var email = form["email"].value;
+        var phone = form["phone"].value;
+        var password = form["password"].value;
+        var confirmPassword = form["confirmPassword"].value;
+        var gender = form["gender"].value;
+
+        if (
+          !fullname ||
+          !username ||
+          !birthdate ||
+          !address ||
+          !email ||
+          !phone ||
+          !password ||
+          !confirmPassword ||
+          !gender
+        ) {
           alert("Please fill out all fields");
           return false;
         }
-        var password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}$/;
-        if(!d.match(password)) {
-          alert("Password must contain at least one number and one uppercase and lowercase letter, and at least 6-16 characters");
+
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}$/;
+        if (!password.match(passwordRegex)) {
+          alert(
+            "Password must contain at least one number and one uppercase and lowercase letter, and at least 6-16 characters"
+          );
           return false;
         }
-        if(d != e) {
-          alert("Password invalid!");
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
           return false;
         }
-        var dob = new Date(z);
+
+        var dob = new Date(birthdate);
         var today = new Date();
-        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-        if(age < 13) {
-          alert("You must be at least 13 years old to register");
-          return false;
+        var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
+        if (age < 13) {
+          var confirmUnderage = confirm("You must be at least 13 years old to register.");
+          if (confirmUnderage) {
+            window.location.href = "https://www.google.com";
+          } else {
+            return false;
+          }
         }
+
+        return true; // Form is valid
       }
     </script>
   </body>
