@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Anime - Horizon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -28,70 +29,28 @@
     />
     <style>
       body {
-        background-color: #121212;
+        --bs-bg-opacity: 1;
+        background-color: rgba(
+          var(--bs-tertiary-bg-rgb),
+          var(--bs-bg-opacity)
+        ) !important;
         color: #fff;
       }
-
-      .navbar.scrolled {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+      .bg-dark {
+        background-color: #212529 !important;
       }
-
-      .footer {
-        background-color: #333;
-        color: #fff;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      .container-card {
-        margin-top: 80px;
-      }
-      .card {
-        width: 100%;
-        height: auto;
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
-      .card:hover {
-        transform: scale(1.05);
-      }
-      .genre {
-        text-decoration: none;
-        height: auto;
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
-      .genre:hover {
-        transform: scale(1.1);
-      }
-      .card-img-top {
-        width: 100%; 
-        height: 200px; 
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-      }
-      
-
-      @media (min-width: 992px) {
-        .col-lg-3 {
-          max-width: 25%;
-        }
-      }
-      @media (max-width: 768px) {
-        .col-md-6 {
-          max-width: 50%;
-        }
+      .bg-gradient {
+        background-image: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ) !important;
       }
     </style>
   </head>
-  <body>
+  <body class="bg-dark bg-gradient">
     <nav
-      class="navbar navbar-expand-lg bg-dark text-light"
+      class="navbar navbar-expand-lg text-light"
       data-bs-theme="dark"
     >
       <div class="container-fluid px-5">
@@ -156,8 +115,8 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-4">
           <div
-            class="card h-100 bg-dark bg-dark text-light"
-            onclick="window.location='anime-details.html'"
+            class="card h-100 bg-dark bg-gradient text-light"
+            onclick="window.location='/animedetail/sousounofrieren.html'"
           >
             <img
               src="https://cdn.myanimelist.net/images/anime/1015/138006.jpg"
@@ -175,9 +134,29 @@
       </div>
     </div>
 
-    <footer class="footer mt-5 py-3 text-center text-light bg-dark">
+    <footer class="footer mt-5 py-3 text-left text-light bg-dark">
       <div class="container text-light">
-        <span class="text-light">Copyright &copy; 2024 Horizon Anime</span>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <h5>Contact</h5>
+            <p>Email: contact@horizonanime.com</p>
+            <p>Phone: +1 123 456 7890</p>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div the="col-md-6">
+            <h5>Social Media</h5>
+            <p>Facebook: <a href="https://www.facebook.com/horizonanime" target="_blank">Horizon Anime</a></p>
+            <p>Twitter: <a href="https://www.twitter.com/horizonanime" target="_blank">@HorizonAnime</a></p>
+            <h5>Other Website</h5>
+            <p><a href="https://www.horizonanime.com" target="_blank">www.horizonanime.com</a></p>
+          </div>
+          <div class="col-md-6 text-center">
+            <h5>Location</h5>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.073073073073!2d106.8286923147695!3d-6.208763995500073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5f3f3f3f3%3A0x2e69f5f3f3f3f3!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1646820730003!5m2!1en!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <span class="text-light text-center">Copyright &copy; 2024 Horizon Anime</span>
+        </div>
       </div>
     </footer>
 
@@ -197,9 +176,10 @@
         },
         false
       );
+      window.onload = function() {
+        document.body.className += ' fade-in';
+      }
     </script>
   </body>
 </html>
-
-
 

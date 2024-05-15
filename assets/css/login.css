@@ -28,7 +28,7 @@ body {
   position: absolute;
   top: 50px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.5); /* Glass effect */
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -53,10 +53,10 @@ body {
   color: black;
   text-decoration: none;
   padding: 8px 16px;
-  border: 2px solid transparent; /* Default no border for inactive */
+  border: 2px solid transparent; 
   background-color: transparent;
-  display: inline-block; /* Make it look like a button */
-  transition: all 0.3s ease; /* Add motion animation when hover */
+  display: inline-block; 
+  transition: all 0.3s ease; 
 }
 
 .navbar-list a:hover {
@@ -71,7 +71,7 @@ body {
   width: 100%;
   padding: 25px 30px;
   animation: fadeIn 1s ease-in-out;
-  margin-top: 60px; /* Adjusted margin to accommodate navbar */
+  margin-top: 60px; 
   background: rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px 0 #ffd07165;
   backdrop-filter: blur(17px);
@@ -84,7 +84,7 @@ body {
   font-weight: 500;
   position: relative;
   animation: fadeIn 1s ease-in-out;
-  color: #2376dd; /* Colorful font for the title */
+  color: #2376dd;
 }
 .container .title::before {
   content: "";
@@ -98,7 +98,7 @@ body {
     135deg,
     #ffcf71,
     #2376dd
-  ); /* Colorful gradient underline */
+  ); 
   animation: fadeIn 1s ease-in-out;
 }
 .content form .user-details {
@@ -117,7 +117,7 @@ form .input-box span.details {
   font-weight: 500;
   margin-bottom: 5px;
   animation: fadeIn 1s ease-in-out;
-  color: #2376dd; /* Colorful text for input labels */
+  color: #2376dd; 
 }
 .user-details .input-box input {
   height: 45px;
@@ -130,17 +130,17 @@ form .input-box span.details {
   border-bottom-width: 2px;
   transition: all 0.3s ease;
   animation: fadeIn 1s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.5); /* Light background for inputs */
+  background-color: rgba(255, 255, 255, 0.5); 
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
-  border-color: #ffcf71; /* Colorful border on focus/valid */
+  border-color: #ffcf71; 
 }
 form .gender-details .gender-title {
   font-size: 20px;
   font-weight: 500;
   animation: fadeIn 1s ease-in-out;
-  color: #2376dd; /* Colorful text for gender title */
+  color: #2376dd; 
 }
 form .category {
   display: flex;
@@ -195,20 +195,20 @@ form .button input {
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Smooth transition for all properties */
+  transition: all 0.3s ease; 
   animation: fadeIn 1s ease-in-out;
   background-image: linear-gradient(
     135deg,
     #ffcf71,
     #2376dd
-  ); /* Colorful gradient button */
+  ); 
 }
 
 /* Hover effect */
 form .button input:hover {
   color: #f8f3f3;
   background-image: linear-gradient(135deg, #2376dd, #ffcf71);
-  transition: all 0.5s ease; /* Smooth transition for all properties */
+  transition: all 0.5s ease; 
 }
 
 @media (max-width: 584px) {
